@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\barangController;
 use App\Http\Controllers\bukuBarangController;
+use App\Http\Controllers\kartuBarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,3 +34,8 @@ Route::post('/bukubarang/store', [bukuBarangController::class, 'store'])->name('
 Route::get('/bukubarang/{barang}/edit', [bukuBarangController::class, 'show'])->name('bukubarang.show');
 Route::post('/bukubarang/edit', [bukuBarangController::class, 'edit'])->name('bukubarang.edit');
 Route::get('/bukubarang/{id}/destroy', [bukuBarangController::class, 'destroy'])->name('bukubarang.destroy');
+// KartuBarang
+Route::get('/kartubarang', [kartuBarangController::class, 'index'])->name('kartubarang.index');
+Route::get('/exportkartubarang', [kartuBarangController::class, 'export'])->name('kartubarang.export');
+
+

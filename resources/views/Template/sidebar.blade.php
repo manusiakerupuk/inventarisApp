@@ -22,7 +22,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ route('kartubarang.index') }}" class="nav-link">
               <i class="nav-icon fa fa-address-card"></i>
               <p>
                 Kartu Barang
