@@ -15,7 +15,7 @@ class CreateBukubarangsTable extends Migration
     {
         Schema::create('bukubarangs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('barangID');
+            $table->foreignId('barang_id');
             $table->date('tanggal');
             $table->integer('jumlah');
             $table->string('hargasatuan', 255);
@@ -24,6 +24,9 @@ class CreateBukubarangsTable extends Migration
             $table->string('keterangan', 255);
             $table->string('tipe', 255);
             $table->timestamps();
+
+            
+            $table->foreign('barang_id')->references('id')->on('barangs');
         });
     }
 

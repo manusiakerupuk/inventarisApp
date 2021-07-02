@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\barangController;
+use App\Http\Controllers\bukuBarangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,7 @@ Route::post('/barang/edit', [barangController::class, 'edit'])->name('barang.edi
 Route::get('/barang/{id}/destroy', [barangController::class, 'destroy'])->name('barang.destroy');
 // BukuBarang
 Route::get('/bukubarang', [bukuBarangController::class, 'index'])->name('bukubarang.index');
+Route::get('/export', [bukuBarangController::class, 'export'])->name('bukubarang.export');
 Route::get('/bukubarang/create', [bukuBarangController::class, 'create'])->name('bukubarang.create');
 Route::post('/bukubarang/store', [bukuBarangController::class, 'store'])->name('bukubarang.store');
 Route::get('/bukubarang/{barang}/edit', [bukuBarangController::class, 'show'])->name('bukubarang.show');
