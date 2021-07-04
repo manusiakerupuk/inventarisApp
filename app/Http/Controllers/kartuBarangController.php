@@ -29,9 +29,6 @@ class kartuBarangController extends Controller
             ->addColumn('sisa', function($row){
                         return 0;
                     })
-            ->addColumn('keterangan', function($row){
-                        return '';
-                    })
             ->rawColumns(['sisa', 'keterangan'])
             ->make(true);
         }
