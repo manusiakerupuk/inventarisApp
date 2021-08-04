@@ -53,12 +53,22 @@ class barangController extends Controller
      */
     public function store(Request $request)
     {
-        barang::create([
-            'nama' => $request->nama,
-            'ukuran' => $request->ukuran,
-            'satuan' => $request->satuan
-        ]);
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil di buat');
+        $temp_barang = barang::where('nama', $request->nama)
+                                ->where('ukuran', $request->ukuran)
+                                ->where('satuan', $request->satuan)
+                                ->first();
+        if ($temp_barang === null) {
+            barang::create([
+                'nama' => $request->nama,
+                'ukuran' => $request->ukuran,
+                'satuan' => $request->satuan
+            ]);
+            return redirect()->route('barang.index')->with('success', 'Barang berhasil di buat');
+        } else {
+            return redirect()->route('barang.create')->with('error', 'Barang sudah ada');
+        }
+            
+        
     }
 
     /**
@@ -81,13 +91,23 @@ class barangController extends Controller
      */
     public function edit(Request $request)
     {
-        $barangs = barang::where('id', $request->id)->update([
-            'nama' => $request->nama,
-            'ukuran' => $request->ukuran,
-            'satuan' => $request->satuan
-        ]);
-        // var_dump($barangs);
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil di ubah');
+        $temp_barang = barang::where('nama', $request->nama)
+                                ->where('ukuran', $request->ukuran)
+                                ->where('satuan', $request->satuan)
+                                ->where('id', '!=', $request->id)
+                                ->first();
+        if ($temp_barang === null) {
+            $barangs = barang::where('id', $request->id)->update([
+                'nama' => $request->nama,
+                'ukuran' => $request->ukuran,
+                'satuan' => $request->satuan
+            ]);
+            // var_dump($barangs);
+            return redirect()->route('barang.index')->with('success', 'Barang berhasil di ubah');
+        } else {
+            return redirect()->route('barang.index')->with('error', 'Barang sudah ada, tidak bisa di edit');
+        }
+        
     }
 
     /**

@@ -24,6 +24,11 @@
 
     <!-- Main content -->
     <div class="content">
+          @if (session('error'))
+            <div class="alert alert-danger">
+                {{ Session::get('error') }}
+            </div>
+          @endif
           <div class="card card-info card-outline">
               <div class="card-header">
                   <h3>Ubah Barang</h3>
