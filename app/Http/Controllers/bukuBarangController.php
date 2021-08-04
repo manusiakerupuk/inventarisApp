@@ -151,9 +151,9 @@ class bukuBarangController extends Controller
             $bukubarangs = bukubarang::all();
         }
         $nama_file = 'laporan_buku_barang_'.date('Y-m-d_H-i-s').'.xlsx';
-        return Excel::download(new bukuBarangExport($bukubarangs, $distinctbukubarangs), $nama_file);
-        $bukubarangs = bukubarang::all();
-        $distinctbukubarangs = bukubarang::distinct()->get('tipe');
-        // return view('export.bukubarang', compact('bukubarangs','distinctbukubarangs'));
+        // return Excel::download(new bukuBarangExport($bukubarangs, $distinctbukubarangs), $nama_file);
+        // $bukubarangs = bukubarang::all();
+        // $distinctbukubarangs = bukubarang::distinct()->get('tipe');
+        return view('export.bukubarang', compact('bukubarangs','distinctbukubarangs'));
     }
 }
