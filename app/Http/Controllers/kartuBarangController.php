@@ -113,6 +113,6 @@ class kartuBarangController extends Controller
                 $bukubarangs = bukubarang::all();
         }
         $nama_file = 'laporan_kartu_barang_'.date('Y-m-d_H-i-s').'.xlsx';
-        return Excel::download(new kartuBarangExport($bukubarangs), $nama_file);
+        return Excel::download(new kartuBarangExport($bukubarangs, $request->nama, $request->nip), $nama_file);
     }
 }

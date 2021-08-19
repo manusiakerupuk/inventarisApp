@@ -165,7 +165,7 @@
                 <td align="center" valign=bottom><b><u><font face="Arial Narrow" color="#000000">Ir. Siti Zuniati, MM</font></u></b></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
-                <td align="center" valign=bottom><b><u><font face="Arial Narrow" color="#000000">WAHYU WIJAYA</font></u></b></td>
+                <td align="center" valign=bottom><b><u><font face="Arial Narrow" color="#000000">{{ $nama }}</font></u></b></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
             </tr>
             <tr>
@@ -173,7 +173,7 @@
                 <td align="center" valign=bottom><font color="#000000">NIP: 19630604 198812 2 002</font></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
-                <td align="center" valign=bottom><font color="#000000">NIP: 19811205 201406 1 001</font></td>
+                <td align="center" valign=bottom><font color="#000000">NIP: {{ $nip }}</font></td>
                 <td align="left" valign=bottom><font color="#000000"><br></font></td>
             </tr>
         </table>

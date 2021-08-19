@@ -51,6 +51,8 @@
                   <div class="card-tools" style="margin-top: 10pt">
                       {{-- <a href="{{ route('bukubarang.create') }}" class="btn btn-success" style="margin-right: 5pt"> Tambah Data <i class="fa fa-plus-square"></i></a> --}}
                       <button href="" id="btn-export" class="btn btn-info float-right"> Export Excel </button >
+                      <input type="text" name="nip" class="float-right" style="margin-right: 5pt" id="nip" placeholder="NIP">
+                      <input type="text" name="nama" class="float-right" style="margin-right: 5pt" id="nama" placeholder="Nama">
                   </div>
                 </form>
               </div>
@@ -123,12 +125,8 @@
       $('#btn-export').click(function()
       {
         var barang_id = $('#barang_id').val();
-        $.ajax(
-        {
-          url: '{!! route('kartubarang.export') !!}',
-          data: {barang_id:barang_id}
-        }
-        );
+        var nama = $('#nama').val();
+        var nip = $('#nip').val();
       });
   });
   </script>
